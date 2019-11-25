@@ -45,7 +45,7 @@ class Aruodas(WebScraper):
         return d
 
 
-for i in range(26,48):
+for i in range(5,15):
 	aruodas = Aruodas("https://www.aruodas.lt/butu-nuoma/vilniuje/puslapis/"+str(i)+"/")
 	aruodas.return_href()
 	aruodas.loop()
