@@ -35,7 +35,7 @@ class Aruodas(WebScraper):
         soup = self.return_html()
         dd = soup.select("dd")
         dt = soup.select("dt")
-        for i in range(9):
+        for i in range(20):
             try:
                 tmp_val = str(dd[i].getText()).strip()
                 tmp_name = str(dt[i].getText()).strip()
@@ -45,9 +45,9 @@ class Aruodas(WebScraper):
         return d
 
 
-for i in range(16,35):
+for i in range(45,55):
 	aruodas = Aruodas("https://www.aruodas.lt/butu-nuoma/vilniuje/puslapis/"+str(i)+"/")
-	aruodas.return_href()
+	aruodas.return_href() 
 	aruodas.loop()
 
 	output = pd.DataFrame()
