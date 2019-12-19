@@ -1,1 +1,9 @@
-http://www.eumetrain.org/data/4/451/english/msg/ver_cont_var/uos3/uos3_ko1.htm MAE and RMSE
+http://www.eumetrain.org/data/4/451/english/msg/ver_cont_var/uos3/uos3_ko1.htm MAE and RMSE  <- DONE
+Check actual_y vs pred_y  <- DONE
+Test year  <- DONE
+Test disctrict  <- DONE
+Test general  <- DONE
+Test security  <- DONE
+
+hiperparamaters  <- DONE
+Check Correlation
