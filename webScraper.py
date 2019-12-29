@@ -22,8 +22,7 @@ class WebScraper:
 
 
 class Aruodas(WebScraper):
-    def loop(self):
-    	
+    def loop(self):    	
         for flat in self.tmp:
         	sleep(5)
         	self.ListOfScrapedFlatInfo.append((self.ScrapeFlat(flat)))
@@ -45,13 +44,19 @@ class Aruodas(WebScraper):
         return d
 
 
-for i in range(45,55):
-	aruodas = Aruodas("https://www.aruodas.lt/butu-nuoma/vilniuje/puslapis/"+str(i)+"/")
-	aruodas.return_href() 
-	aruodas.loop()
+# for i in range(45,55):
+	# aruodas = Aruodas("https://www.aruodas.lt/butu-nuoma/vilniuje/puslapis/"+str(i)+"/")
+	# aruodas.return_href() 
+	# aruodas.loop()
 
-	output = pd.DataFrame()
-	for d in aruodas.ListOfScrapedFlatInfo:
-			output = output.append(d, ignore_index=True)
-	output.to_excel("output "+str(i)+".xlsx", index=False)
-	print(f"Done: {i}")
+	# output = pd.DataFrame()
+	# for d in aruodas.ListOfScrapedFlatInfo:
+	# 		output = output.append(d, ignore_index=True)
+	# output.to_excel("output "+str(i)+".xlsx", index=False)
+    # aruodas = Aruodas("https://www.aruodas.lt/butu-nuoma/vilniuje/puslapis/"+str(i)+"/")
+aruodas = Aruodas("Foo")
+output = aruodas.ScrapeFlat("https://www.aruodas.lt/butu-nuoma-vilniuje-pasilaiciuose-leiciu-g-naujas-ir-kokybiskai-irengtas-butas-laukia-4-955759/")
+df = pd.DataFrame()
+df = df.append(output, ignore_index=True)
+print(df)
+print(df.head())
