@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)file:///C:/Users/S3407b/Desktop/11b-master/11b-master/templates/index.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">      
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="file:///C:/Users/S3407b/Desktop/11b-master/11b-master/templates/index.html#">Tribe of AI</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="file:///C:/Users/S3407b/Desktop/11b-master/11b-master/templates/index.html#">Predict</a></li>
+      <li><a href="file:///C:/Users/S3407b/Desktop/11b-master/11b-master/templates/index.html#">Model</a></li>
+    </ul>
+  </div>
+</nav>
+    <main role="main" class="container">
+      <div style="background:transparent !important" class="jumbotron">
+        <h1>Vilnius rent price prediction</h1>
+        <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+  <form class="form-horizontal" action="http://localhost:5000/index" method = "post">    
+    <div class="form-group">         
+        <input type="text" class="form-control" id="pwd" placeholder="Enter password" value="https://www.aruodas.lt/butu-nuoma-vilniuje-pilaiteje-elbingo-g-nuomojamas-bent-metams-irengtas-1k-studio-4-955039/">  
+    </div>
+        <button type="submit" class="btn btn-default">Predict</button>
+  </form>
+      </div>
+      {{prediction}}
+    </main>
+</body>
+</html>

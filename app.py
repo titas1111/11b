@@ -6,31 +6,19 @@ from model import predict
 app = Flask(__name__)
 
 
-@app.route("/")
-def index():
-    return "Hello World"
+# @app.route("/", methods=['GET', 'POST'])
+# def index():    
+#     if request.method == 'POST':
+#         return "none"
+#     else:
+#         return render_template("index.html")
 
-
-@app.route("/form", methods=["POST", "GET"])
-def form():
-	if request.method == "POST":
-		result = request.form
-		flat = [[result["Metai"], result["Plotas"], result["Kambariu sk"], result["Aukstas"], result["Pastato tipas"], result["Renovacijos metai"]]]
-		RentPrediction  = predict(flat)
-		return render_template("form.html", RentPrediction=RentPrediction, Metai=result["Metai"], Plotas=result["Plotas"], KambariuSk = result["Kambariu sk"], Aukstas=result["Aukstas"],RenovacijosMetai= result["Renovacijos metai"])
-	else:
-		return render_template("form.html")
-
-
-@app.route("/result", methods=["POST", "GET"])
-def result():
-    if request.method == "POST":
-        result = request.form
-        flat = [[result["Metai"], result["Plotas"], result["Kambariu sk"], result["Aukstas"], result["Pastato tipas"], result["Renovacijos metai"]]]
-        return str(predict(flat))
+@app.route("/index", methods=['GET', 'POST'])
+def index():    
+    if request.method == 'POST':
+        return render_template("index.html", prediction = 100)
     else:
-        return "No result"
-
+        return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
