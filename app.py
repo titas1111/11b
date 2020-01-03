@@ -17,5 +17,9 @@ def index():
     else:
         return render_template("index.html")
 
+@app.route("/model")
+def model():
+    return "Will post info about the models"
+    
 if __name__ == "__main__":
     app.run(debug=True)

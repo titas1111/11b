@@ -5,17 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="file:///C:/Users/S3407b/Desktop/11b-master/11b-master/templates/index.html#">Tribe of AI</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="file:///C:/Users/S3407b/Desktop/11b-master/11b-master/templates/index.html#">Predict</a></li>
-      <li><a href="file:///C:/Users/S3407b/Desktop/11b-master/11b-master/templates/index.html#">Model</a></li>
-    </ul>
-  </div>
-</nav>
+    {% include 'navigation.html' %}
     <main role="main" class="container">
       <div style="background:transparent !important" class="jumbotron">
         <h1>Vilnius rent price prediction</h1>
@@ -26,8 +16,20 @@
     </div>
         <button type="submit" class="btn btn-default">Predict</button>
   </form>
-      </div>  
-      The rent price is: {{price}} the model predicted price is: {{modelPrediction}} for {{website}}
+      </div>
+      <div class="p-3 mb-2 bg-success text-white">
+        The rent price is: {{price}} the model predicted price is: {{modelPrediction}} for {{website}}
+      </div>
+      
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
     </main>
 </body>
 </html>
