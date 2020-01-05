@@ -9,17 +9,16 @@ app = Flask(__name__)
 def index():    
     if request.method == 'POST':
         website = request.form["website"]
-        # prediction = int(model.predictPrice(website))
         prediction = model.predictPrice(website)
         modelPrediction = int(prediction[0])
-        price = prediction[1]
-        return render_template("index.html", modelPrediction = modelPrediction, website = website, price = price)
+        price = int(prediction[1].replace(" €",""))
+        return render_template("index.html", modelPrediction = modelPrediction, website = website, price = price, diff = price - modelPrediction)
     else:
-        return render_template("index.html")
+        return render_template("index.html", modelPrediction = 0)
 
-@app.route("/model")
-def model():
-    return "Will post info about the models"
+# @app.route("/model")
+# def model():
+#     return "Will post info about the models"
     
 if __name__ == "__main__":
     app.run(debug=True)

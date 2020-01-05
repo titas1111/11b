@@ -18,10 +18,20 @@
   </form>
       </div>
       <div class="p-3 mb-2 bg-success text-white">
-        The rent price is: {{price}} the model predicted price is: {{modelPrediction}} for {{website}}
+        {% if modelPrediction > 0 %}
+          The rent price is: {{price}} the model predicted price is: {{modelPrediction}} for {{website}}
+          <br>          
+          {% if diff > 0 %}          
+            The Flat is undervalues by: {{diff}}
+          {% else %}
+            The Flat is overvalues by: {{diff}}
+          {% endif %}          
+        {% endif %}
       </div>
       
       <div>
+        <br>
+        <br>
         <ul class="list-group">
           <li class="list-group-item">Cras justo odio</li>
           <li class="list-group-item">Dapibus ac facilisis in</li>
