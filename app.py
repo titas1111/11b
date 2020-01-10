@@ -6,9 +6,9 @@ import pandas as pd
 
 app = Flask(__name__)
 
-df = pd.DataFrame({'A': [0, 1, 2, 3, 4],
-                   'X': [5, 6, 7, 8, 9]})
-
+df = pd.read_csv("recomendations.csv", delimiter=";", index_col ="Adresas")
+df = df[df["district"]=="pilaiteje"]
+df = df[["rent_price", "Predicted_price", "district"]]
 @app.route("/", methods=['GET', 'POST'])
 def index():    
     if request.method == 'POST':
